@@ -43,9 +43,27 @@ namespace Mission08_Team0109.Controllers
                 return View(response);
             }
         }
-        
 
-        
+        public IActionResult UpdateTask(int id) //Brings the task to edit into the add edit task view
+        {
+            var recordToEdit = _context.Tasks
+                .Single(x => x.TaskId == id);
+
+            ViewBag.Categories = _context.Categories
+                .OrderBy(x => x.CategoryName)
+                .ToList();
+            return View("AddEditTask", recordToEdit);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateTask(TaskItem updatedInfo) //Actually updates the task
+        {
+            _context.UpdateTask(updatedInfo);
+            _context.SaveTask();
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
 
