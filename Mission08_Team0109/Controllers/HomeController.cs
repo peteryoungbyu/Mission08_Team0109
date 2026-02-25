@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Mission08_Team0109.Models;
+
 using System.Diagnostics;
 
 namespace Mission08_Team0109.Controllers
@@ -11,15 +11,6 @@ namespace Mission08_Team0109.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        
     }
 }
