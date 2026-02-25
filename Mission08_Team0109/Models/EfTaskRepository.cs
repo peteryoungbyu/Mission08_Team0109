@@ -14,7 +14,7 @@ namespace Mission08_Team0109.Models
         public IQueryable<TaskItem> Tasks => _context.Tasks.Include(t => t.Category);
         public IQueryable<Category> Categories => _context.Categories;
         
-        public void addTask(TaskItem task)
+        public void AddTask(TaskItem task)
         {
             _context.Tasks.Add(task);
         }

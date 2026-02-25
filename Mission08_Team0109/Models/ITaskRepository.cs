@@ -5,7 +5,7 @@
         IQueryable<TaskItem> Tasks { get; }
         IQueryable<TaskItem> Categories { get; }
 
-        void addTask(TaskItem task);
+        void AddTask(TaskItem task);
         void UpdateTask(TaskItem task);
         void DeleteTask(TaskItem task);
         void SaveTask();
