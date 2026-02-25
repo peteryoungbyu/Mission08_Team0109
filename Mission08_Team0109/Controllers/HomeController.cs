@@ -68,7 +68,7 @@ namespace Mission08_Team0109.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateTask(TaskItem updatedInfo) //Actually updates the task
+        public IActionResult UpdateTask(TaskItem updatedInfo) //Actually updates the task then redirects to index
         {
             _context.Update(updatedInfo);
             _context.SaveChanges();
@@ -77,7 +77,7 @@ namespace Mission08_Team0109.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteTask(int id)
+        public IActionResult DeleteTask(int id) //Deletes the task and then redirects to index
         {
             var recordToDelete = _context.Tasks
                 .Single(x => x.TaskId == id);
