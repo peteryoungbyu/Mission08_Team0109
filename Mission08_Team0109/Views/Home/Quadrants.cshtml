@@ -33,7 +33,7 @@
                         foreach (var t in q1)
                         {
                             <div class="border rounded p-2 mb-2">
-                                <strong>@t.Task</strong><br />
+                                <strong>@t.TaskName</strong><br />
                                 <small>Due: @(t.DueDate?.ToString("MMM d, yyyy") ?? "—")</small>
 
                                 <div class="mt-2 d-flex gap-2">
@@ -97,7 +97,7 @@
                         foreach (var t in q3)
                         {
                             <div class="border rounded p-2 mb-2">
-                                <strong>@t.Task</strong>
+                                <strong>@t.TaskName</strong>
                             </div>
                         }
                     }
@@ -121,7 +121,7 @@
                         foreach (var t in q4)
                         {
                             <div class="border rounded p-2 mb-2">
-                                <strong>@t.Task</strong>
+                                <strong>@t.TaskName</strong>
                             </div>
                         }
                     }
