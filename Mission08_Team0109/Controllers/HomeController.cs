@@ -1,12 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
-
+using Mission08_Team0109.Models;
 using System.Diagnostics;
 using static System.Net.Mime.MediaTypeNames;
+using Microsoft.EntityFrameworkCore;
 
 namespace Mission08_Team0109.Controllers
 {
+
+    
     public class HomeController : Controller
     {
+
+        private TaskDbContext _context;
+
+        public HomeController(TaskDbContext temp) //Constructor
+        {
+            _context = temp;
+        }
+
+
         // Renders the index and passes in all tasks
         public IActionResult Index()
         {
@@ -31,7 +43,7 @@ namespace Mission08_Team0109.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Tasks.addTask(response); // Add record to database
+                _context.Tasks.Add(response); // Add record to database
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -58,10 +70,22 @@ namespace Mission08_Team0109.Controllers
         [HttpPost]
         public IActionResult UpdateTask(TaskItem updatedInfo) //Actually updates the task
         {
-            _context.UpdateTask(updatedInfo);
-            _context.SaveTask();
+            _context.Update(updatedInfo);
+            _context.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteTask(int id)
+        {
+            var recordToDelete = _context.Tasks
+                .Single(x => x.TaskId == id);
+
+            _context.Tasks.Remove(recordToDelete);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+
         }
 
     }
