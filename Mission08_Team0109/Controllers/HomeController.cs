@@ -66,7 +66,16 @@ namespace Mission08_Team0109.Controllers
                 .ToList();
             return View("AddEditTask", recordToEdit);
         }
-
+        
+        [HttpPost]
+        public IActionResult Complete(int id) //when clicked Completed it then stops showing the record in the quad
+        {
+            var task = _context.Tasks.Single(x => x.TaskId == id);
+            task.Completed = true;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        
         [HttpPost]
         public IActionResult UpdateTask(TaskItem updatedInfo) //Actually updates the task then redirects to index
         {
