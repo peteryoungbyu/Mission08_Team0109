@@ -17,13 +17,13 @@
     <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="mb-3">
-        <label asp-for="TaskName" class="form-label"></label>
+        <label asp-for="TaskName" class="form-label">Task Name</label>
         <input asp-for="TaskName" class="form-control" />
         <span asp-validation-for="TaskName" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="DueDate" class="form-label"></label>
+        <label asp-for="DueDate" class="form-label">Due Date</label>
         <input asp-for="DueDate" class="form-control" type="date" />
         <span asp-validation-for="DueDate" class="text-danger"></span>
     </div>
@@ -41,7 +41,7 @@
     </div>
 
     <div class="mb-3">
-        <label asp-for="CategoryId" class="form-label"></label>
+        <label asp-for="CategoryId" class="form-label">Category</label>
         <select asp-for="CategoryId" class="form-select">
             <option value="">Select a category</option>
             @foreach (var c in ViewBag.Categories)
