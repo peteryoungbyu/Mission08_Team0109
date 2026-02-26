@@ -46,8 +46,16 @@
                                             Complete
                                         </button>
                                     </form>
-
-                                    <form asp-action="Delete" method="post" class="d-inline"
+                                    
+                                    @* Added the edit button on the bar  *@
+                                    
+                                    <a asp-action="UpdateTask"
+                                       asp-route-id="@t.TaskId"
+                                       class="btn btn-sm btn-outline-primary">
+                                        Edit
+                                    </a>
+                                    
+                                    <form asp-action="DeleteTask" method="post" class="d-inline"
                                           onsubmit="return confirm('Delete this task?');">
                                         @Html.AntiForgeryToken()
                                         <input type="hidden" name="id" value="@t.TaskId" />
@@ -92,8 +100,16 @@
                                             Complete
                                         </button>
                                     </form>
-
-                                    <form asp-action="Delete" method="post" class="d-inline"
+                                    
+                                    @* Added the edit button on the bar  *@
+                                    
+                                    <a asp-action="UpdateTask"
+                                       asp-route-id="@t.TaskId"
+                                       class="btn btn-sm btn-outline-primary">
+                                        Edit
+                                    </a>
+                                    
+                                    <form asp-action="DeleteTask" method="post" class="d-inline"
                                           onsubmit="return confirm('Delete this task?');">
                                         @Html.AntiForgeryToken()
                                         <input type="hidden" name="id" value="@t.TaskId" />
@@ -138,8 +154,16 @@
                                             Complete
                                         </button>
                                     </form>
-
-                                    <form asp-action="Delete" method="post" class="d-inline"
+                                    
+                                    @* Added the edit button on the bar  *@
+                                    
+                                    <a asp-action="UpdateTask"
+                                       asp-route-id="@t.TaskId"
+                                       class="btn btn-sm btn-outline-primary">
+                                        Edit
+                                    </a>
+                                    
+                                    <form asp-action="DeleteTask" method="post" class="d-inline"
                                           onsubmit="return confirm('Delete this task?');">
                                         @Html.AntiForgeryToken()
                                         <input type="hidden" name="id" value="@t.TaskId" />
@@ -184,8 +208,16 @@
                                             Complete
                                         </button>
                                     </form>
-
-                                    <form asp-action="Delete" method="post" class="d-inline"
+                                    
+                                    @* Added the edit button on the bar  *@
+                                    
+                                    <a asp-action="UpdateTask"
+                                       asp-route-id="@t.TaskId"
+                                       class="btn btn-sm btn-outline-primary">
+                                        Edit
+                                    </a>
+                                    
+                                    <form asp-action="DeleteTask" method="post" class="d-inline"
                                           onsubmit="return confirm('Delete this task?');">
                                         @Html.AntiForgeryToken()
                                         <input type="hidden" name="id" value="@t.TaskId" />
