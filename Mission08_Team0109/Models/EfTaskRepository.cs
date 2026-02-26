@@ -2,11 +2,11 @@
 
 namespace Mission08_Team0109.Models
 {
-    public class EfTaskRepository : ITaskRepository
+    public class EFTaskRepository : ITaskRepository
     {
         private readonly TaskDbContext _context;
 
-        public EfTaskRepository(TaskDbContext context)
+        public EFTaskRepository(TaskDbContext context)
         {
             _context = context;
         }

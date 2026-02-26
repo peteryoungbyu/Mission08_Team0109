@@ -1,9 +1,9 @@
 ﻿namespace Mission08_Team0109.Models
 {
-    public class ITaskRepository
+    public interface ITaskRepository
     {
         IQueryable<TaskItem> Tasks { get; }
-        IQueryable<TaskItem> Categories { get; }
+        IQueryable<Category> Categories { get; }
 
         void AddTask(TaskItem task);
         void UpdateTask(TaskItem task);
